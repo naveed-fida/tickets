@@ -1,0 +1,11 @@
+<div class="project_form">
+  <%= form_for @project do |f| %>
+    <dl>
+      <dt>Name</dt>
+      <dd><%= f.text_field :name %></dd>
+      <dt>Description</dt>
+      <dd><%= f.text_area :description %></dd>
+      <%= f.submit button_text %>
+    </dl>
+  <% end %>
+</div>
