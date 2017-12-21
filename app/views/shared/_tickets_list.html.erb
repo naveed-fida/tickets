@@ -1,0 +1,24 @@
+<div class="tickets_list">
+    <h2>Tickets</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tickets.each do |ticket| %>
+          <tr>
+            <td><%= ticket.name %></td>
+            <td><%= ticket.status %></td>
+            <td>
+              <%= link_to 'Edit', edit_ticket_path(ticket) %>
+              <%= link_to 'Destroy', ticket_path(ticket), method: :delete %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

@@ -7,13 +7,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Project.destroy_all
+Ticket.destroy_all
 
-Project.create(
+wall = Project.create(
   name: 'The Wall',
   description: "We're going to build a great wall. It's going to be a big, beautiful wall. We have to build the wall, we have no choice. Now let me tell you who's going to pay for it. Are you ready? ARE YOU READY?"
 )
 
-Project.create(
+dam = Project.create(
   name: 'The Dam',
   description: "We'll build a dam. A beautiful dam but obviously not as beautiful as the wall. It's going to generate electricity. Can you believe that; a dam where you generate electricity?"
+)
+
+Ticket.create(
+  name: 'Issue 1',
+  body: "A serious issue. Very serious!",
+  status: 'new',
+  project: wall
+)
+
+Ticket.create(
+  name: 'Issue 2',
+  body: "A serious issue. Very serious!",
+  status: 'in_progress',
+  project: dam
 )

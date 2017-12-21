@@ -1,0 +1,19 @@
+<div class="ticket_form">
+  <%= form_for @ticket do |f| %>
+    <dl>
+      <dt>Name</dt>
+      <dd><%= f.text_field :name %></dd>
+      <dt>Body</dt>
+      <dd><%= f.text_area :body %></dd>
+      <dt>Status</dt>
+      <dd>
+        <%= f.select :status, options_for_select(['new', 'blocked', 'in_progress','fixed'].map {|st| [st.capitalize, st]}) %>
+      </dd>
+      <dt>Project</dt>
+      <dd>
+        <%= f.select :project_id, options_for_select(@projects.map {|p| [p.name, p.id]}) %>
+      </dd>
+    </dl>
+    <%= f.submit button_text %>
+  <% end %>
+</div>
