@@ -5,14 +5,16 @@
         <tr>
           <th>Name</th>
           <th>Status</th>
+          <th>Tags</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <% tickets.each do |ticket| %>
           <tr>
-            <td><%= ticket.name %></td>
+            <td><%= link_to ticket.name, ticket_path(ticket) %></td>
             <td><%= ticket.status %></td>
+            <td><%= ticket.display_tags %></td>
             <td>
               <%= link_to 'Edit', edit_ticket_path(ticket) %>
               <%= link_to 'Destroy', ticket_path(ticket), method: :delete %>

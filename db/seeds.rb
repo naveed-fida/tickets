@@ -20,19 +20,19 @@ dam = Project.create(
   description: "We'll build a dam. A beautiful dam but obviously not as beautiful as the wall. It's going to generate electricity. Can you believe that; a dam where you generate electricity?"
 )
 
-Ticket.create(
+t1 = Ticket.create(
   name: 'Issue 1',
   body: "A serious issue. Very serious!",
   status: 'new',
   project: wall
 )
 
-Ticket.create(
+t2 = Ticket.create(
   name: 'Issue 2',
   body: "A serious issue. Very serious!",
   status: 'in_progress',
   project: dam
 )
 
-Tag.create(name: 'Urgent')
-Tag.create(name: 'More info needed')
+Tag.create(name: 'Urgent').tickets << t1
+Tag.create(name: 'More info needed').tickets << t1

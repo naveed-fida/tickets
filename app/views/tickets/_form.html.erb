@@ -13,6 +13,10 @@
       <dd>
         <%= f.select :project_id, options_for_select(@projects.map {|p| [p.name, p.id]}) %>
       </dd>
+      <dt>Tags</dt>
+      <dd>
+        <%= f.collection_select :tag_ids, Tag.all, :id, :name, {}, multiple: true, id: :ticket_tag_ids, size: Tag.count %>
+      </dd>
     </dl>
     <%= f.submit button_text %>
   <% end %>
