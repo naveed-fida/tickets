@@ -8,6 +8,7 @@
 
 Project.destroy_all
 Ticket.destroy_all
+Tag.destroy_all
 
 wall = Project.create(
   name: 'The Wall',
@@ -32,3 +33,6 @@ Ticket.create(
   status: 'in_progress',
   project: dam
 )
+
+Tag.create(name: 'Urgent')
+Tag.create(name: 'More info needed')

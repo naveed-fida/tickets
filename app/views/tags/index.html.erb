@@ -1,0 +1,27 @@
+<div class="tags_list">
+  <h2>Tags</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tags.each do |tag| %>
+        <tr>
+          <td><%= tag.name %></td>
+          <td>
+            <%= link_to 'Edit', edit_tag_path(tag) %>
+            or
+            <%= link_to 'Destroy', tag_path(tag), method: :delete %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <%= link_to 'New Tag', new_tag_path %>
+</div>
