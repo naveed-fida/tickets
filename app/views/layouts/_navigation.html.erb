@@ -1,5 +1,17 @@
 <nav>
   <ul>
+    <li><%= link_to 'Projects', projects_path %></li>
     <li><%= link_to 'Tickets', tickets_path %></li>
+    <li><%= link_to 'Tags', tags_path %></li>
   </ul>
+
+  <div class="login_logout">
+    <% if current_user %>
+      <%=link_to('Logout', logout_path, method: :post) %>
+    <% else %>
+      <%= link_to('Login', login_path) %>
+      OR
+      <%= link_to('Sign up', signup_path) %>
+    <% end %>
+  </div>
 </nav>

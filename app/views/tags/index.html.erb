@@ -12,9 +12,11 @@
         <tr>
           <td><%= tag.name %></td>
           <td>
-            <%= link_to 'Edit', edit_tag_path(tag) %>
-            or
-            <%= link_to 'Destroy', tag_path(tag), method: :delete %>
+            <% if current_user %>
+              <%= link_to 'Edit', edit_tag_path(tag) %>
+              or
+              <%= link_to 'Destroy', tag_path(tag), method: :delete %>
+            <% end %>
           </td>
         </tr>
       <% end %>

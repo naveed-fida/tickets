@@ -1,4 +1,6 @@
 class TicketsController < ApplicationController
+  before_action :require_sign_in, except: [:index, :show]
+
   def index
     @tickets = Ticket.all
   end

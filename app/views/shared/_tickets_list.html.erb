@@ -16,8 +16,10 @@
             <td><%= ticket.status %></td>
             <td><%= ticket.display_tags %></td>
             <td>
-              <%= link_to 'Edit', edit_ticket_path(ticket) %>
-              <%= link_to 'Destroy', ticket_path(ticket), method: :delete %>
+              <% if current_user %>
+                <%= link_to 'Edit', edit_ticket_path(ticket) %>
+                <%= link_to 'Destroy', ticket_path(ticket), method: :delete %>
+              <% end %>
             </td>
           </tr>
         <% end %>

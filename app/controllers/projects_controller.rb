@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :require_sign_in, except: [:index, :show]
+
   def index
     @projects = Project.all
   end

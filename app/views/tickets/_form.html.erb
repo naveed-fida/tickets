@@ -7,11 +7,12 @@
       <dd><%= f.text_area :body %></dd>
       <dt>Status</dt>
       <dd>
-        <%= f.select :status, options_for_select(['new', 'blocked', 'in_progress','fixed'].map {|st| [st.capitalize, st]}) %>
+        <%= f.select :status, ['new', 'blocked', 'in_progress','fixed'].map{|t| [t, t]}, id: :ticket_status %>
+
       </dd>
       <dt>Project</dt>
       <dd>
-        <%= f.select :project_id, options_for_select(@projects.map {|p| [p.name, p.id]}) %>
+        <%= f.collection_select :project_id, Project.all, :id, :name, {}, id: :ticket_tag_ids, size: Project.count %>
       </dd>
       <dt>Tags</dt>
       <dd>

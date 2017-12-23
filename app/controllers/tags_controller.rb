@@ -1,4 +1,7 @@
 class TagsController < ApplicationController
+
+  before_action :require_sign_in, except: [:index]
+
   def index
     @tags = Tag.all
   end
